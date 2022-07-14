@@ -2,17 +2,18 @@
 <html>
 
 <head>
-	<title>Parcel Sandbox</title>
-	<meta charset="UTF-8" />
+	<title>Todo</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="src/styles.css">
 </head>
 
 <body>
-	<div>
+	<div class="input-area">
 		<!-- 入力エリア：テキストエリアと登録ボタンがある -->
-		<input placeholder="ToDoを入力してください">
+		<input placeholder="ToDoを入力">
 		<button>登録</button>
 	</div>
-	<div>
+	<div class="Todo-area">
 		<!-- 一覧エリア -->
 		<p>Todo一覧</p>
 		<ul>
@@ -23,7 +24,7 @@
 			</div>
 		</ul>
 	</div>
-	<div>
+	<div class="complete-area">
 		<!-- 完了エリア -->
 		<p>完了済</p>
 		<ul>

@@ -21,8 +21,7 @@ const onClickAdd = () => {
     alert("完了しました")
     //完了ボタンを押すと完了済エリアにTodoが移動し、Todo一覧からは削除される。
     //完了済エリアにDOMを生成する
-    const deleteTarget = completeButton.parentNode;
-    document.getElementById("index-todo").removeChild(deleteTarget);
+    deleteItemFromTodoList(completeButton.parentNode);
   });
 
   //削除ボタンを生成
@@ -30,8 +29,9 @@ const onClickAdd = () => {
   deleteButton.innerText = "削除";
   deleteButton.addEventListener("click", () => {
     //押された削除ボタンの親親タグ(div)をTodoリストから削除
-    const deleteTarget = deleteButton.parentNode;
-    document.getElementById("index-todo").removeChild(deleteTarget);
+    deleteItemFromTodoList(deleteButton.parentNode);
+    // const deleteTarget = deleteButton.parentNode;
+    // document.getElementById("index-todo").removeChild(deleteTarget);
   });
   // divタグの子要素にliタグを設定
   div.appendChild(li);
@@ -41,6 +41,11 @@ const onClickAdd = () => {
 
   //Todo一覧に追加
   document.getElementById("index-todo").appendChild(div);
+}
+
+//Todo一覧から、指定の要素を削除
+const deleteItemFromTodoList = (target) => {
+  document.getElementById("index-todo").removeChild(target);
 }
 
 // add-buttonというidに対して、clickイベントを追加する
